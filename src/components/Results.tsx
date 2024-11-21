@@ -39,14 +39,9 @@ const Results = ({
               },
               index: number
             ) => {
-              const questionIndex = questions.findIndex(
-                (q) => q.question === value.question
+              const correctAnswer = questions[index].answerOptions.find(
+                (a) => a.isCorrect
               );
-              const correctAnswerId = questions[
-                questionIndex
-              ].answerOptions.findIndex((opt) => opt.isCorrect);
-              const correctAnswer =
-                questions[questionIndex].answerOptions[correctAnswerId].text;
               return (
                 <div key={index}>
                   <span
@@ -58,8 +53,11 @@ const Results = ({
                   >
                     {value.question}
                   </span>
-                  correct answer is:{" "}
-                  <span style={{ fontWeight: "bold" }}> {correctAnswer}</span>
+                  <b>
+                    {!value.isCorrect
+                      ? `- ${correctAnswer ? correctAnswer.text : ""}`
+                      : ""}
+                  </b>
                 </div>
               );
             }

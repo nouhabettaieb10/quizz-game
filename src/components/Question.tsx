@@ -13,9 +13,9 @@ const Question = ({
 }: IQuestionParams) => {
   return (
     <div>
-      <span style={{ fontWeight: "bold" }}>
+      <b>
         Q.{nextQuestionId + 1} {questionItem.question}
-      </span>
+      </b>
       <ul
         style={{
           gap: "5px",
