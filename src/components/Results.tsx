@@ -1,5 +1,3 @@
-import React from "react";
-
 type IResultsParams = {
   answers: { question: String; isCorrect: Boolean; response: String }[];
   questions: {

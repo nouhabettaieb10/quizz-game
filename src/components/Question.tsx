@@ -1,5 +1,3 @@
-import React from "react";
-
 type IQuestionParams = {
   nextQuestionId: number;
   questionItem: {
@@ -26,7 +24,7 @@ const Question = ({
         }}
       >
         {questionItem.answerOptions.map(
-          (value: { text: string; isCorrect: boolean }, index: number) => {
+          (value: { text: string; isCorrect: boolean }) => {
             return (
               <button
                 key={value.text}
